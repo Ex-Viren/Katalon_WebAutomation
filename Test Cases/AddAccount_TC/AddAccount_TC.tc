@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>AddAccount_TC</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>5777f7fd-7a9d-4c7c-b9f6-fbd6e97d76d2</testCaseGuid>
+</TestCaseEntity>

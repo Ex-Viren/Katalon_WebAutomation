@@ -19,10 +19,10 @@
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>b6f9490b-3fa3-4aaf-bf46-c82cf7769d20</guid>
+      <guid>a50f5ac7-f3be-4f52-a0ae-3ec019ea5cbb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Login_TC/TCN_Login</testCaseId>
+      <testCaseId>Test Cases/AddAccount_TC/AddAccount_TC</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

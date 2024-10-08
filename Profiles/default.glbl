@@ -9,4 +9,9 @@
       <initValue>'https://www.saucedemo.com/'</initValue>
       <name>G_SiteURL</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login'</initValue>
+      <name>NewUsers</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
