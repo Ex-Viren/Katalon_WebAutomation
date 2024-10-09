@@ -11,15 +11,15 @@ import com.kms.katalon.core.context.TestSuiteContext
 
 
 
-def static "com.katalon.extent.report.ExtentReport.deleteFolderContents"() {
-    (new com.katalon.extent.report.ExtentReport()).deleteFolderContents()
-}
-
-
 def static "com.katalon.extent.report.ExtentReport.takeScreenshotFailure"(
     	TestCaseContext testCaseContext	) {
     (new com.katalon.extent.report.ExtentReport()).takeScreenshotFailure(
         	testCaseContext)
+}
+
+
+def static "com.katalon.extent.report.ExtentReport.deleteFolderContents"() {
+    (new com.katalon.extent.report.ExtentReport()).deleteFolderContents()
 }
 
 
@@ -54,6 +54,13 @@ def static "com.katalon.extent.report.ExtentReport.attachEReport"(
 }
 
 
+def static "com.katalon.extent.report.ExtentReport.startEReport"(
+    	TestCaseContext testCaseContext	) {
+    (new com.katalon.extent.report.ExtentReport()).startEReport(
+        	testCaseContext)
+}
+
+
 def static "com.katalon.extent.report.ExtentReport.flushEReport"() {
     (new com.katalon.extent.report.ExtentReport()).flushEReport()
 }
@@ -64,20 +71,13 @@ def static "com.katalon.extent.report.ExtentReport.getScreenshot"() {
 }
 
 
-def static "com.katalon.extent.report.ExtentReport.startEReport"(
-    	TestCaseContext testCaseContext	) {
-    (new com.katalon.extent.report.ExtentReport()).startEReport(
-        	testCaseContext)
+def static "com.katalon.extent.report.ExtentReport.addScreenshot"(
+    	String newScreenshotpath	) {
+    (new com.katalon.extent.report.ExtentReport()).addScreenshot(
+        	newScreenshotpath)
 }
 
 
 def static "com.katalon.extent.report.ExtentReport.addScreenshot"() {
     (new com.katalon.extent.report.ExtentReport()).addScreenshot()
-}
-
-
-def static "com.katalon.extent.report.ExtentReport.addScreenshot"(
-    	String newScreenshotpath	) {
-    (new com.katalon.extent.report.ExtentReport()).addScreenshot(
-        	newScreenshotpath)
 }
