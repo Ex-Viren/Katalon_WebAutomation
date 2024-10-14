@@ -63,12 +63,13 @@ try {
     WebUI.setText(findTestObject('Object Repository/AddAccount/Page_XYZ Bank/input_First Name_form-control ng-pristine n_693e51'), 
         'Viren')
 
+    WebUI.verifyTextPresent('Viren!', true)
+
     CustomKeywords.'com.katalon.extent.report.ExtentReport.attachLog'('Search registered customer name')
 
-//    WebUI.click(findTestObject('Object Repository/AddAccount/Page_XYZ Bank/button_Delete'))
-//
-//    CustomKeywords.'com.katalon.extent.report.ExtentReport.attachLog'('Deleted registered customer name')
-
+    //    WebUI.click(findTestObject('Object Repository/AddAccount/Page_XYZ Bank/button_Delete'))
+    //
+    //    CustomKeywords.'com.katalon.extent.report.ExtentReport.attachLog'('Deleted registered customer name')
     WebUI.closeBrowser()
 
     CustomKeywords.'com.katalon.extent.report.ExtentReport.attachLog'('Browser close successfully')
@@ -81,4 +82,5 @@ catch (Exception e) {
     WebUI.closeBrowser()
 
     throw e
-}
+} 
+

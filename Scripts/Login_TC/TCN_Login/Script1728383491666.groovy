@@ -27,7 +27,7 @@ try {
 
     String currentURL = WebUI.getUrl()
 
-    String expectedURL = 'https://www.saucedemocomm/'
+    String expectedURL = 'https://www.saucedemo.com/'
 
     CustomKeywords.'com.katalon.extent.report.ExtentReport.attachLog'('Navigated to URL: ' + currentURL)
 
@@ -40,21 +40,33 @@ try {
         throw new AssertionError((('URL does not match! Expected: ' + expectedURL) + ' but found: ') + currentURL)
     }
     
-    WebUI.setText(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_user-name'), 'standard_user')
+    WebUI.setText(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_user-name'), 'standarduser')
 
-    CustomKeywords.'com.katalon.extent.report.ExtentReport.attachLog'('Enter valid user')
+    String inputString = WebUI.getAttribute(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_user-name'), 
+        'value')
 
+    String regexPattern = '^[a-zA-Z_]+$'
+
+    if (inputString.matches(regexPattern)) {
+        WebUI.comment('The string is valid. It contains only alphabets and optional underscores.')
+
+        CustomKeywords.'com.katalon.extent.report.ExtentReport.attachLog'('Username is invalid. Username should be enter valid formate.')
+    } else if (inputString.isEmpty()) {
+        WebUI.comment('The input field is empty.')
+
+        CustomKeywords.'com.katalon.extent.report.ExtentReport.attachLog'('Username field is empty.')
+    } else {
+        WebUI.comment('The string is invalid. It contains characters besides alphabets and underscores.')
+
+        CustomKeywords.'com.katalon.extent.report.ExtentReport.attachLog'('Username is invalid, Username should be enter valid formate.')
+    }
+      
     WebUI.setEncryptedText(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_password'), 'qcu24s4901FyWDTwXGr6XA==')
+	
+	WebUI.click(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_login-button'))
 
-    CustomKeywords.'com.katalon.extent.report.ExtentReport.attachLog'('Enter valid password')
-
-    WebUI.click(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_login-button'))
-
-    WebUI.click(findTestObject('Object Repository/Page_Swag Labs/button_Open Menu'))
-
-    WebUI.click(findTestObject('Object Repository/Page_Swag Labs/a_Logout'))
-
-    CustomKeywords.'com.katalon.extent.report.ExtentReport.attachLog'('Logout successfully')
+//    WebUI.verifyElementText(findTestObject('Object Repository/Page_Swag Labs/h3_Epic sadface Username and password do not match any user in this service'), 
+//        'Epic sadface: Username and password do not match any user in this service')
 
     WebUI.closeBrowser()
 
@@ -64,8 +76,8 @@ catch (AssertionError e) {
     CustomKeywords.'com.katalon.extent.report.ExtentReport.attachLog'('Assertion failed: ' + e.getMessage())
 
     CustomKeywords.'com.katalon.extent.report.ExtentReport.addScreenshot'()
-
-    WebUI.closeBrowser()
+	
+	WebUI.closeBrowser()
 
     throw e
 } 

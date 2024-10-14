@@ -18,7 +18,6 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-
 try {
     WebUI.openBrowser('')
 
@@ -43,13 +42,9 @@ try {
     
     WebUI.setText(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_user-name'), 'standard_user')
 
-    CustomKeywords.'com.katalon.extent.report.ExtentReport.attachLog'('Enter valid user')
-
     WebUI.setEncryptedText(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_password'), 'qcu24s4901FyWDTwXGr6XA==')
-
-    CustomKeywords.'com.katalon.extent.report.ExtentReport.attachLog'('Enter valid password')
-
-    WebUI.click(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_login-button'))
+	
+	WebUI.click(findTestObject('Object Repository/Page_Swag Labs/input_Swag Labs_login-button'))
 
     WebUI.click(findTestObject('Object Repository/Page_Swag Labs/button_Open Menu'))
 
